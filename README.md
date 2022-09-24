@@ -897,13 +897,13 @@ You can download the PDF and Epub version of this repository from the latest run
     ```javascript
     function userDetails(username) {
       if (username) {
-        console.log(salary); // undefined due to hoisting
-        console.log(age); // ReferenceError: Cannot access 'age' before initialization
+        console.log(salary); //10000 (accessible to due function scope)
+        console.log(age);  //error: age is not defined(due to block scope)
         let age = 30;
         var salary = 10000;
       }
-      console.log(salary); //10000 (accessible to due function scope)
-      console.log(age); //error: age is not defined(due to block scope)
+      console.log(salary);  // undefined due to hoisting
+      console.log(age);  // ReferenceError: Cannot access 'age' before initialization
     }
     userDetails("John");
     ```
